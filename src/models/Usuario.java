@@ -2,6 +2,7 @@ package models;
 
 public class Usuario {
 
+	private Integer identificador;
 	private String nome;
 	private String senha;
 	
@@ -16,5 +17,11 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public Integer getIdentificador() {
+		return identificador;
+	}
+	public void setIdentificador(Integer identificador) {
+		this.identificador = identificador;
 	}
 }
