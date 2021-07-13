@@ -22,7 +22,9 @@ public class ConexaoDAO {
 		}
 	}
 	
+	
 	public Connection getConnection(){
 		return this.connection;
 	}
+
 }

@@ -16,16 +16,18 @@ public class UsuarioDAO {
 
 	public Usuario consultaUsuario(String nome, String senha) {
 		
-		Connection con;
+		Connection connection;
 		Usuario usuario = null;
 		try {
-			con = ConexaoDAO.getInstance().getConnection();
-
+			connection = ConexaoDAO.getInstance().getConnection();
+			//ConexaoDAO conexao = new ConexaoDAO();
+			//connection = conexao.getConnection();
+			
 			String sql = "SELECT * FROM usuario"
 					+ " WHERE nome like '" + nome + "'"
 					+ " and senha like '" + senha + "';";
 			
-			Statement stmt = con.createStatement();
+			Statement stmt = connection.createStatement();
 	        ResultSet rs = stmt.executeQuery(sql);
 
 	        while(rs.next()) {
