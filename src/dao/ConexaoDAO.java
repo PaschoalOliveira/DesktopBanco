@@ -14,17 +14,18 @@ public class ConexaoDAO {
 		this.connection = DriverManager.getConnection("jdbc:mysql://sql435.main-hosting.eu:3306/u590093429_treinamento","u590093429_treinamento","Treinamento123");
 	}
 	
+	public Connection getConnection(){
+		return this.connection;
+	}
+	
+	
 	public static ConexaoDAO getInstance() throws ClassNotFoundException, SQLException {
 		if(conexaoDAO == null) {
-			return new ConexaoDAO();
+			conexaoDAO = new ConexaoDAO();
+			return conexaoDAO;
 		}else {
 			return conexaoDAO;
 		}
 	}
 	
-	
-	public Connection getConnection(){
-		return this.connection;
-	}
-
 }

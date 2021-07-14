@@ -42,9 +42,14 @@ public class FrameLogin extends JFrame {
 			
 			if(logado == true) {
 				setVisible(false);
+				/*
 				FrameCadastroCliente frameCadastroCliente = new FrameCadastroCliente();
 				frameCadastroCliente.setVisible(true);
-				JOptionPane.showMessageDialog(frameCadastroCliente,"Você logou com sucesso!");				
+				*/
+				FrameMenuPrincipal frameMenuPrincipal = new FrameMenuPrincipal();
+				frameMenuPrincipal.setVisible(true);
+
+				JOptionPane.showMessageDialog(frameMenuPrincipal,"Você logou com sucesso!");				
 			}else {
 				JOptionPane.showMessageDialog(null,"Usuário ou Senha não existe(m)");
 			}

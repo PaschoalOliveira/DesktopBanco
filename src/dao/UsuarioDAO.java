@@ -20,6 +20,7 @@ public class UsuarioDAO {
 		Usuario usuario = null;
 		try {
 			connection = ConexaoDAO.getInstance().getConnection();
+			
 			//ConexaoDAO conexao = new ConexaoDAO();
 			//connection = conexao.getConnection();
 			

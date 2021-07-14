@@ -5,6 +5,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,6 +28,8 @@ public class FrameCadastroCliente extends JFrame {
 	private JLabel lblNewLabel_2;
 	private JTextField txtCPF;
 	private JButton btnCadastrar;
+	private JLabel lblDataHoje;
+	private JLabel lblCotacaoDolar;
 
 	class BtnCatastrarActionListener implements ActionListener
 	{
@@ -64,9 +68,9 @@ public class FrameCadastroCliente extends JFrame {
 		setContentPane(contentPane);
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[]{0, 0, 0, 0, 0};
-		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
+		gbl_contentPane.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gbl_contentPane.columnWeights = new double[]{0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
-		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		contentPane.setLayout(gbl_contentPane);
 		
 		JLabel lblNewLabel = new JLabel("Nome do Cliente");
@@ -122,9 +126,34 @@ public class FrameCadastroCliente extends JFrame {
 		
 		btnCadastrar = new JButton("Cadastrar");
 		GridBagConstraints gbc_btnCadastrar = new GridBagConstraints();
+		gbc_btnCadastrar.insets = new Insets(0, 0, 5, 0);
 		gbc_btnCadastrar.gridx = 3;
 		gbc_btnCadastrar.gridy = 5;
 		contentPane.add(btnCadastrar, gbc_btnCadastrar);
+		
+		Date date = new Date("2021/12/12");
+		lblDataHoje = new JLabel();				
+		
+		lblDataHoje.setText(date.toString());
+
+		GridBagConstraints gbc_lblDataHoje = new GridBagConstraints();
+		gbc_lblDataHoje.insets = new Insets(0, 0, 0, 5);
+		gbc_lblDataHoje.gridx = 2;
+		gbc_lblDataHoje.gridy = 8;
+		contentPane.add(lblDataHoje, gbc_lblDataHoje);
+		
+		lblCotacaoDolar = new JLabel("");
+		DecimalFormat df = new DecimalFormat();
+		df.setMaximumFractionDigits(5);
+		df.setMaximumIntegerDigits(3);
+		
+		lblCotacaoDolar.setText(df.format(13141.12321312312));
+		
+		GridBagConstraints gbc_lblCotacaoDolar = new GridBagConstraints();
+		gbc_lblCotacaoDolar.gridx = 3;
+		gbc_lblCotacaoDolar.gridy = 8;
+		contentPane.add(lblCotacaoDolar, gbc_lblCotacaoDolar);
+		
 		
 		BtnCatastrarActionListener btnCatastrarActionListener = new BtnCatastrarActionListener();
 		btnCadastrar.addActionListener(btnCatastrarActionListener);

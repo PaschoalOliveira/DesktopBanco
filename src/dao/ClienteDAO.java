@@ -12,11 +12,12 @@ public class ClienteDAO {
 	public Boolean cadastraCliente(Cliente cliente) throws Exception, SQLIntegrityConstraintViolationException {
 		Connection connection;
 		try {
+			
 			connection = ConexaoDAO.getInstance().getConnection();
-			/*
-			ConexaoDAO conexao = new ConexaoDAO();
-			connection = conexao.getConnection();
-			*/
+			
+			//ConexaoDAO conexao = new ConexaoDAO();
+			//connection = conexao.getConnection();
+			
 			String sql = "INSERT cliente (nome,cpf,telefone)" +
 						 " values ('" + cliente.getNome() + "'," + 
 						 "'" + cliente.getCpf() + "'," +
